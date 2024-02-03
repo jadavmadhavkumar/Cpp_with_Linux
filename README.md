@@ -3,3 +3,14 @@
 
 
 
+<button class="btn" data-clipboard-target="#copy-command">Copy</button>
+
+<!-- Target element for clipboard.js -->
+<div id="copy-command" style="display: none;">
+# Your command goes here
+echo "Hello, World!"
+</div>
+<script>
+// Initialize clipboard.js
+new ClipboardJS('.btn');
+</script>
