@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Werror -std=c++11 -g CMakeFiles/HelloWorld.dir/scr/Main.cpp.o -o HelloWorld 
