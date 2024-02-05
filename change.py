@@ -1,26 +1,22 @@
-def replace_word_in_file(file_path, old_word, new_word):
-    try:
-        # Read the content of the file
-        with open(file_path, 'r') as file:
-            content = file.read()
+import re
+import os
 
-        # Replace the old word with the new word
-        modified_content = content.replace(old_word, new_word)
+# Get the current folder name
+current_folder = os.path.basename(os.getcwd())
 
-        # Write the modified content back to the file
-        with open(file_path, 'w') as file:
-            file.write(modified_content)
+# Set the input file path
+input_file = "CMakeLists.txt"
 
-        print(f"Successfully replaced '{old_word}' with '{new_word}' in {file_path}")
+# Read content from the input file
+with open(input_file, 'r') as file:
+    content = file.read()
 
-    except FileNotFoundError:
-        print(f"Error: File not found - {file_path}")
-    except Exception as e:
-        print(f"An error occurred: {e}")
+# Use regular expression to replace the placeholder
+pattern = re.compile(r'__your_project_name__')
+modified_content = pattern.sub(current_folder, content)
 
-# Example usage
-file_path = 'CMakeLists.txt'  # Replace with the path to your file
-old_word = 'word_to_replace'
-new_word = 'project'
+# Write the modified content back to the input file
+with open(input_file, 'w') as file:
+    file.write(modified_content)
 
-replace_word_in_file(file_path, old_word, new_word)
+print(f"Placeholder replaced with {current_folder} in {input_file}")
