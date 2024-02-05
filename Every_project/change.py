@@ -12,7 +12,7 @@ with open(input_file, 'r') as file:
     content = file.read()
 
 # Use regular expression to replace the placeholder
-pattern = re.compile(r'__your_project_name__')
+pattern = re.compile(r'__Your_project_Name__')
 modified_content = pattern.sub(current_folder, content)
 
 # Write the modified content back to the input file
