@@ -60,10 +60,7 @@
                         glutMainLoop();
                         return 0;
                 }
-                </code>
-                <pre>
-                
-</div>
+              
 <div>
     </div>
     <h2 style="color: #666; font-size: 18px; margin-bottom: 10px;">References</h2>
