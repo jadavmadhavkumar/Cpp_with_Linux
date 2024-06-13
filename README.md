@@ -41,27 +41,29 @@
             <code style="font-size: 14px; font-family: monospace; background-color: #f9f9f9; padding: 10px; border: none; border-radius: 5px; width: 100%;">
                 #include <GL/glut.h>
 
-                void display() {
-                    glClear(GL_COLOR_BUFFER_BIT);
-                    glBegin(GL_TRIANGLES);
-                    glVertex2f(-0.5, -0.5);
-                    glVertex2f(0.5, -0.5);
-                    glVertex2f(0, 0.5);
-                    glEnd();
-                    glutSwapBuffers();
+                    void display() {
+                        glClear(GL_COLOR_BUFFER_BIT);
+                        glBegin(GL_TRIANGLES);
+                        glVertex2f(-0.5, -0.5);
+                        glVertex2f(0.5, -0.5);
+                        glVertex2f(0, 0.5);
+                        glEnd();
+                        glutSwapBuffers();
                 }
 
-                int main(int argc, char** argv) {
-                    glutInit(&argc, argv);
-                    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
-                    glutInitWindowSize(640, 480);
-                    glutCreateWindow("OpenGL Example");
-                    glutDisplayFunc(display);
-                    glutMainLoop();
-                    return 0;
+                    int main(int argc, char** argv) {
+                        glutInit(&argc, argv);
+                        glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+                        glutInitWindowSize(640, 480);
+                        glutCreateWindow("OpenGL Example");
+                        glutDisplayFunc(display);
+                        glutMainLoop();
+                        return 0;
                 }
-            </code>
-        </pre>
+                </code>
+                <pre>
+                
+</div>
 <div>
     </div>
     <h2 style="color: #666; font-size: 18px; margin-bottom: 10px;">References</h2>
