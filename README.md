@@ -15,6 +15,31 @@
     <p style="font-size: 16px; margin-bottom: 20px;">1. <strong>Install the OpenGL development package</strong>:</p>
     <code style="font-size: 14px; font-family: monospace; background-color: #f9f9f9; padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 100%;">sudo apt-get install freeglut3-dev</code>
     <p style="font-size: 16px; margin-bottom: 20px;">or</p>
+    <code void drawCircle(float cx, float cy, float r, int num_segments, float z, float red, float green, float blue) {
+    GLfloat material_diffuse[] = { red, green, blue, 1.0f };
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, material_diffuse);
+    glBegin(GL_LINE_LOOP);
+    for (int i = 0; i < num_segments; i++) {
+        float theta = 2.0f * 3.1415926f * float(i) / float(num_segments);
+        float x = r * cosf(theta);
+        float y = r * sinf(theta);
+        glVertex3f(x + cx, y + cy, z);
+    }
+    glEnd();
+}
+
+void drawSquare(float cx, float cy, float r, float z, float red, float green, float blue) {
+    GLfloat material_diffuse[] = { red, green, blue, 1.0f };
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, material_diffuse);
+    glBegin(GL_QUADS);
+    glVertex3f(cx - r, cy - r, z);
+    glVertex3f(cx + r, cy - r, z);
+    glVertex3f(cx + r, cy + r, z);
+    glVertex3f(cx - r, cy + r, z);
+    glEnd();
+}
+
+// Similar changes can be applied to drawTriangle and drawRectangle>
     <code style="font-size: 14px; font-family: monospace; background-color: #f9f9f9; padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 100%;">sudo yum install freeglut-devel</code>
     <p style="font-size: 16px; margin-bottom: 20px;">2. <strong>Install the GLUT library</strong>:</p>
     <code style="font-size: 14px; font-family: monospace; background-color: #f9f9f9; padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 100%;">sudo apt-get install libglut-dev</code>
