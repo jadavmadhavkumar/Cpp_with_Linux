@@ -4,6 +4,7 @@
 
 // Function to draw a circle
 void drawCircle(float cx, float cy, float r, int num_segments, float z, float red, float green, float blue) {
+    glDisable(GL_LIGHTING);  // Disable lighting
     glColor3f(red, green, blue);
     glBegin(GL_LINE_LOOP);
     for (int i = 0; i < num_segments; i++) {
@@ -13,10 +14,12 @@ void drawCircle(float cx, float cy, float r, int num_segments, float z, float re
         glVertex3f(x + cx, y + cy, z);
     }
     glEnd();
+    glEnable(GL_LIGHTING);  // Re-enable lighting
 }
 
 // Function to draw a square
 void drawSquare(float cx, float cy, float r, float z, float red, float green, float blue) {
+    glDisable(GL_LIGHTING);  // Disable lighting
     glColor3f(red, green, blue);
     glBegin(GL_QUADS);
     glVertex3f(cx - r, cy - r, z);
@@ -24,20 +27,24 @@ void drawSquare(float cx, float cy, float r, float z, float red, float green, fl
     glVertex3f(cx + r, cy + r, z);
     glVertex3f(cx - r, cy + r, z);
     glEnd();
+    glEnable(GL_LIGHTING);  // Re-enable lighting
 }
 
 // Function to draw a triangle
 void drawTriangle(float cx, float cy, float r, float z, float red, float green, float blue) {
+    glDisable(GL_LIGHTING);  // Disable lighting
     glColor3f(red, green, blue);
     glBegin(GL_TRIANGLES);
     glVertex3f(cx - r, cy, z);
     glVertex3f(cx + r, cy, z);
     glVertex3f(cx, cy + r, z); // Adjust the y-coordinate for the increased size
     glEnd();
+    glEnable(GL_LIGHTING);  // Re-enable lighting
 }
 
 // Function to draw a rectangle
 void drawRectangle(float cx, float cy, float w, float h, float z, float red, float green, float blue) {
+    glDisable(GL_LIGHTING);  // Disable lighting
     glColor3f(red, green, blue);
     glBegin(GL_QUADS);
     glVertex3f(cx - w / 2, cy - h / 2, z);
@@ -45,6 +52,7 @@ void drawRectangle(float cx, float cy, float w, float h, float z, float red, flo
     glVertex3f(cx + w / 2, cy + h / 2, z);
     glVertex3f(cx - w / 2, cy + h / 2, z);
     glEnd();
+    glEnable(GL_LIGHTING);  // Re-enable lighting
 }
 
 // Function to set up lighting for Phong shading
